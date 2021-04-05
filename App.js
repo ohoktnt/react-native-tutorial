@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native'; //for iOS/Android
 import {Button, withTheme} from 'react-native-elements'; //3rd party pkg allows display different comps
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // to be able to use react-native-elements, you need to configure by npm installing then npx linking
 
@@ -17,6 +18,12 @@ export default class App extends Component {
         {/* <Text>Hello World</Text> - replace with another View container */}
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Tutorial App</Text>
+        </View>
+        <View style={styles.outputContainer}>
+          <Text>0</Text>
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button title="Press Me" buttonStyle={styles.button}></Button>
         </View>
       </View>
     )
@@ -36,5 +43,20 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
+  },
+  button: {
+    width: 200, 
+    height: 57,
+    backgroundColor: 'black',
+    borderRadius: 8,
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    paddingBottom: 40,
+  },
+  outputContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
