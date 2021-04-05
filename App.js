@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native'; //for iOS/Android
-import {Button} from 'react-native-elements'; //3rd party pkg allows display different comps
+import {Button, withTheme} from 'react-native-elements'; //3rd party pkg allows display different comps
 
 // to be able to use react-native-elements, you need to configure by npm installing then npx linking
 
@@ -11,11 +11,30 @@ export default class App extends Component {
   render(){
     // this method can render components, data on our app
     return (
-      <View> 
+      <View style={styles.rootContainer}> 
         {/* In the view component, it will hold all the UI data
         can also hold logic. basically container for cold */}
-        <Text>Hello World</Text>
+        {/* <Text>Hello World</Text> - replace with another View container */}
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Tutorial App</Text>
+        </View>
       </View>
     )
   }
 }
+
+// to create a stylesheet
+
+const styles = StyleSheet.create({
+  rootContainer: {
+    backgroundColor: 'grey', 
+    flex: 1
+  },
+  titleContainer: {
+    paddingLeft: 30,
+    paddingTop: 100,
+  },
+  title: {
+    fontSize: 30,
+  }
+})
