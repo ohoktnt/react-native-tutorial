@@ -20,7 +20,7 @@ export default class App extends Component {
           <Text style={styles.title}>Tutorial App</Text>
         </View>
         <View style={styles.outputContainer}>
-          <Text>0</Text>
+          <Text style={styles.output}>0</Text>
         </View>
         <View style={styles.buttonContainer}>
           <Button title="Press Me" buttonStyle={styles.button}></Button>
@@ -58,5 +58,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  output: {
+    fontSize: 30,
   }
 })
